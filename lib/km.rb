@@ -161,9 +161,6 @@ class KM
     end
 
     def log_error(error)
-      if defined?(HoptoadNotifier)
-        HoptoadNotifier.notify_or_ignore(KMError.new(error))
-      end
       msg = Time.now.strftime("<%c> ") + error.message
       $stderr.puts msg if @to_stderr
       log(:error, msg)
