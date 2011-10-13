@@ -200,6 +200,7 @@ class KM
         rescue Exception => e
           log_query(query)
           log_error(e)
+          raise
         end
       end
     end
